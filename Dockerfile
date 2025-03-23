@@ -8,6 +8,12 @@ RUN apt-get update && apt-get full-upgrade -y
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get install git
-RUN git clone 
+COPY .bashrc ~/.bashrc
+COPY .vimrc ~/.vimrc
+COPY config.sh ~/config.sh
+COPY .pythonrc ~/.pythonrc
+COPY .pythonstartup ~/.pythonstartup
+RUN chmod +x ~/config.sh
+RUN ~/config.sh
 
 CMD ["/bin/bash"]
