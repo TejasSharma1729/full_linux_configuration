@@ -93,11 +93,10 @@ fi
 #if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 #    . /etc/bash_completion
 #fi
-alias ll='ls -alhG '
-alias llr='ls -alhRG '
-alias l='ls -aCG '
-alias lr='ls -aCRG '
-alias rd='rm -rf '
+alias l='ls -AF '
+alias ll='ls -AlSFh '
+alias lr='ls -AlSFRh '
+alias rd='rm -rvf '
 alias d='du -h -d 1 '
 alias sudo='sudo '
 alias cr='cp -rf '
