@@ -1,0 +1,2 @@
+import sys
+print(''.join(('\033[01;34m====================================== \033[01;32mPYTHON \033[01;31m', str(sys.version_info.major), '.', str(sys.version_info.minor), '.', str(sys.version_info.micro), ' \033[01;34m====================================== \033[00m')))
