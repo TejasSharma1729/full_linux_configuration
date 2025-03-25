@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get full-upgrade -y 
 
-RUN apt-get install software-properties-common build-essential clang lldb lld libc++-dev g++-14 zsh nodejs git curl wget bzip2 gdb pip neovim ranger make cmake pkg-config python-is-python3 tmux libboost-all-dev libyaml-cpp-dev libeigen3-dev -y
+RUN apt-get install sudo software-properties-common build-essential clang lldb lld libc++-dev g++-14 zsh nodejs git curl wget bzip2 gdb pip neovim ranger make cmake pkg-config python-is-python3 tmux libboost-all-dev libyaml-cpp-dev libeigen3-dev -y
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100
 RUN update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 100
