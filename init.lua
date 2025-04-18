@@ -1,5 +1,3 @@
--- ~/.config/nvim/init.lua
--- Basic settings (translated from your init.vim)
 vim.opt.number = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
@@ -13,7 +11,6 @@ vim.opt.backspace = "indent,eol,start"
 vim.opt.laststatus = 2
 vim.opt.mouse = "anv"
 
--- Filetype-specific autocmds (translated from Vimscript)
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "c", "cpp", "java" },
     callback = function()
@@ -31,11 +28,10 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "make",
     callback = function()
-        vim.opt_local.noexpandtab = true
+        vim.opt_local.expandtab = false
     end
 })
 
--- Lazy.nvim bootstrap
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -49,7 +45,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Plugin configuration
 require("lazy").setup({
     {
         "folke/snacks.nvim",
@@ -62,13 +57,6 @@ require("lazy").setup({
             scroll = { enabled = true },
         }
     },
-    -- Converted Vundle plugins
-    { "scrooloose/nerdtree", config = function()
-        vim.g.NERDTreeShowHidden = 1
-    end },
-    -- { "bfrg/vim-cpp-modern" },
-    -- { "mxw/vim-jsx" },
-    -- { "pangloss/vim-javascript" },
     { "sheerun/vim-polyglot" },
     { "rafi/awesome-vim-colorschemes" },
     { "itchyny/lightline.vim" },
@@ -79,17 +67,12 @@ require("lazy").setup({
     { "davidhalter/jedi-vim" },
     { "github/copilot.vim" },
     { "lervag/vimtex" },
-    { "xuhdev/vim-latex-live-preview", config = function()
-        vim.g.livepreview_previewer = 'open -a Preview'
-    end },
     { "ptzz/lf.vim" },
     { "voldikss/vim-floaterm" },
 }, {
     install = { colorscheme = { "gruvbox" } }
 })
 
--- Final post-configuration
 vim.cmd.colorscheme("gruvbox")
 vim.cmd("syntax enable")
 vim.cmd("filetype plugin indent on")
-
