@@ -58,10 +58,11 @@ require("lazy").setup({
         }
     },
     { "sheerun/vim-polyglot" },
-    { "rafi/awesome-vim-colorschemes" },
+    { "tomasiser/vim-code-dark" },
     { "itchyny/lightline.vim" },
     { "jiangmiao/auto-pairs", config = function()
-        vim.g.AutoPairsMapCR = false    -- Disable automatic <CR> mapping
+       vim.g.AutoPairsMapCR = 1    -- Disable automatic <CR> mapping
+       vim.g.AutoPairsCenterLine = 0  -- Disable centering
         vim.g.AutoPairsShortcutToggle = '<M-p>'    -- Change default toggle key
     end },
     { "davidhalter/jedi-vim" },
@@ -70,9 +71,9 @@ require("lazy").setup({
     { "ptzz/lf.vim" },
     { "voldikss/vim-floaterm" },
 }, {
-    install = { colorscheme = { "gruvbox" } }
+    install = { colorscheme = { "codedark" } }
 })
 
-vim.cmd.colorscheme("gruvbox")
+vim.cmd.colorscheme("codedark")
 vim.cmd("syntax enable")
 vim.cmd("filetype plugin indent on")
